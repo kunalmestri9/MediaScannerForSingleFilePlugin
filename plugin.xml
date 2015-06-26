@@ -1,0 +1,35 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.laurus.plugins.MediaScannerForSingleFilePlugin"
+    version="1.0.0">
+
+    <name>Media Scanner For Single File Plugin</name>
+
+    <description>This plugin scans given file to the Android filesystem so that they will show up to the OS and appear in the Gallery, Media Players, etc.</description>
+    <author>Kunal Mestri </author>
+    <keywords>android,image,photo library,mediascanner</keywords>
+
+    <engine>
+        <engine name="cordova" version=">=2.9.0" />
+    </engine>
+
+    <license>MIT</license>
+
+    <js-module src="www/MediaScannerForSingleFilePlugin.js" name="MediaScannerForSingleFilePlugin">
+        <clobbers target="window.MediaScannerForSingleFilePlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+          <feature name="MediaScannerForSingleFilePlugin" >
+            <param name="android-package" value="com.laurus.plugins.MediaScannerForSingleFilePlugin.MediaScannerForSingleFilePlugin"/>
+          </feature>
+        </config-file>
+
+        <source-file src="src/android/MediaScannerForSingleFilePlugin.java" 
+            target-dir="src/com/laurus/plugins/MediaScannerForSingleFilePlugin" />
+
+    </platform>
+</plugin>
